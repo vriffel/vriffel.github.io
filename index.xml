@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vinicius Ricardo Riffel</title>
+    <link>http://example.org/</link>
+    <description>Recent content on Vinicius Ricardo Riffel</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park</title>
+      <link>http://example.org/blog/arima/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/arima/</guid>
+      <description>Nas últimas décadas, a discussão sobre mudanças climáticas vem ganhando cada vez mais espaço. Nesse contexto, o entendimento de uma série histórica climática é de suma importância, a fim de prever tendências e mudanças nos valores de temperatura e precipitação, por exemplo. Afinal, a habilidade de antecipar como o clima irá mudar de um ano para o outro, possibilita melhor gerenciamento da agricultura, recursos hídricos e atividade pesqueira, além da possibilidade de contribuição relevante nos campos dos transportes, abastecimento, turismo e lazer.</description>
+    </item>
+    
+    <item>
+      <title>Modelo de regressão linear para precificação de processadores</title>
+      <link>http://example.org/blog/reg/</link>
+      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/blog/reg/</guid>
+      <description>A compra de dispositivos tecnológicos é facilmente realizada através de sites de compra online. Antes o cliente estava acostumado a procurar soluções para sua vida tomando para si o que existia no mercado independente da adequação do produto ou serviço para seu propósito. Atualmente o mercado gamer é um dos mercados mais exigentes em termos de escolha de dispositivos tecnológicos de forma que atenda suas necessidades operacionais. Em 2018, somente esse mercado movimentou em média 1,5 bilhão de dólares no Brasil, sendo o Brasil o 13° maior mercado do mundo.</description>
+    </item>
+    
+  </channel>
+</rss>

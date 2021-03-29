@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Metodologia | Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park</title>
+  <meta name="description" content="2 Metodologia | Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Metodologia | Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Metodologia | Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park" />
+  
+  
+  
+
+<meta name="author" content="Ana Rosária Zucon" />
+<meta name="author" content="Vinicius Ricardo Riffel" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introdução.html"/>
+<link rel="next" href="dados.html"/>
+<script src="libs/header-attrs-2.6.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="sec-materias.html"><a href="sec-materias.html"><i class="fa fa-check"></i><b>2</b> Metodologia</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="sec-materias.html"><a href="sec-materias.html#processos-estocásticos"><i class="fa fa-check"></i><b>2.1</b> Processos estocásticos</a></li>
+<li class="chapter" data-level="2.2" data-path="sec-materias.html"><a href="sec-materias.html#modelos-para-séries-temporais"><i class="fa fa-check"></i><b>2.2</b> Modelos para séries temporais</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="dados.html"><a href="dados.html"><i class="fa fa-check"></i><b>3</b> Modelagem com dados reais</a></li>
+<li class="chapter" data-level="4" data-path="conclusão.html"><a href="conclusão.html"><i class="fa fa-check"></i><b>4</b> Conclusão</a></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sec:materias" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Metodologia</h1>
+<p>Para utilizar séries temporais é necessário entender processos estocásticos,
+visto que um processo estocástico é uma coleção de variáveis aleatórias que, em
+geral, são utilizadas para estudar a evolução de fenômenos que são observados ao
+longo do tempo (<span class="citation">Resende (2016)</span>).</p>
+<div id="processos-estocásticos" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Processos estocásticos</h2>
+<p>Um processo estocástico é uma função aleatória <span class="math inline">\(Y_t\)</span> que evolui no tempo (e/ou
+no espaço), definida sob um espaço de probabilidades. Mais precisamente, um
+processo estocástico é uma família <span class="math inline">\(Y=\{Y(t), t \in T\}\)</span> tal que para cada <span class="math inline">\(t\)</span>
+pertencente a <span class="math inline">\(\rm I\!R\)</span>, <span class="math inline">\(Y(t)\)</span> é uma variável aleatória. Se <span class="math inline">\(T=\{1, \ldots, t\}\)</span>, diz-se que o processo é de parâmetro discreto e é denotado por <span class="math inline">\(Y_t\)</span> . Se
+<span class="math inline">\(T\)</span> pertence a <span class="math inline">\(\rm I\!R\)</span>, diz-se que o processo é de parâmetro contínuo e é
+denotado por <span class="math inline">\(Y(t)\)</span>.</p>
+<p>O conceito de processos estocásticos é utilizado para descrever situações que
+não podem ser escritas com métodos determinísticos. Essas situações referem-se a
+processos em que dado uma condição inicial, essa pode evoluir de forma a
+percorrer inúmeras trajetórias possíveis (<span class="citation">Faria (2015)</span>). Nesse contexto, as séries
+temporais podem descrever e fazer previsões dessas situações.</p>
+</div>
+<div id="modelos-para-séries-temporais" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Modelos para séries temporais</h2>
+<p>A análise de séries temporais tem como objetivo principal a
+realização da previsão, e, para isso, diversos modelos podem ser
+ajustados, tendo como base a função de autocorrelação. O conceito
+de autocorrelação pode ser descrito, basicamente como a medição
+da correlação entre as observações de uma mesma variável em
+diferentes horizontes de tempo (<span class="citation">Ehlers (2005)</span>). Assim, com
+base no mesmo autor, dadas <span class="math inline">\(n\)</span> observações <span class="math inline">\(x_1, \ldots, x_n\)</span> de
+uma série temporal discreta podemos formar os pares <span class="math inline">\((x_1, x_2), \ldots,(x_{n-1}, x_n)\)</span>. Considerando <span class="math inline">\(x_1, \ldots, x_{n-1}\)</span> e
+<span class="math inline">\(x_2, \ldots, x_n\)</span> como duas variáveis o coeficiente de
+correlação entre <span class="math inline">\(x_t\)</span> e <span class="math inline">\(x_{t+1}\)</span> é dado por:</p>
+<p><span class="math display">\[\begin{equation*}
+    r_k = \frac{\sum_{t=1}^{n-k} (x_t - \bar{x})(x_{t+k} - \bar{x})}{\sum_{t=1}^{n}(x_t - \bar{x})^2}
+\end{equation*}\]</span></p>
+<p>Dentro desse contexto, há diversos métodos que podem ser utilizados, e, serão descritos na sequência.</p>
+<p>Um modelo <span class="math inline">\(Y_t\)</span> é chamado auto-regressivo de ordem <span class="math inline">\(p\)</span>, denotado por AR(<span class="math inline">\(p\)</span>), se:</p>
+<p><span class="math display" id="eq:ar">\[\begin{equation}
+    Y_t = c + \sum_{t=1}^{p} \phi_i Y_{t-i} + \varepsilon_t \hspace{0.3cm} t=p+1,p+2,\ldots,n.
+    \tag{2.1}
+\end{equation}\]</span></p>
+<p>em que <span class="math inline">\(Y_t\)</span> é um processo estocástico estacionário, <span class="math inline">\(\varepsilon_t\)</span> é um termo de erro, <span class="math inline">\(c\)</span> e <span class="math inline">\(\phi_i\)</span> são os parâmetros do modelo.</p>
+<p>Os modelos AR podem ser usados como modelos se for razoável assumir que o valor atual de uma série temporal depende do seu passado adicionado por um erro aleatório.</p>
+<p>Outro modelo amplamente utilizado na análise de séries temporais são os modelos de médias móveis com ordem <span class="math inline">\(q\)</span>, denotado por <span class="math inline">\(MA(q)\)</span>, definidos por:</p>
+<p><span class="math display" id="eq:ma">\[\begin{equation}
+Y_t = \mu + \sum_{i=1}^{q} \theta_{i} \epsilon_{t-i} + \varepsilon_t \hspace{0.3cm} t=q+1,q+2,\ldots,n.
+\tag{2.2}
+\end{equation}\]</span></p>
+<p>em que <span class="math inline">\(\epsilon_t\)</span> é o erro no tempo <span class="math inline">\(t\)</span>, <span class="math inline">\(\varepsilon_t\)</span> é um
+termo de erro, <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\theta_i\)</span> são os parâmetros do modelo.</p>
+<p>Combinando as Equações <a href="sec-materias.html#eq:ar">(2.1)</a> e <a href="sec-materias.html#eq:ma">(2.2)</a> temos o modelo ARMA
+(Autoregressive Moving Average). Eles são definidos por equações diferenciais
+lineares com coeficientes constantes e desempenham um papel fundamental na
+modelagem de dados de séries temporais <span class="citation">Amaro et al. (2017)</span>. Ele é composto por composto
+de uma parte auto-regressiva variável, explicado pelo comportamento passado da
+própria variável, e uma parte de médias móveis, explicado pelos distúrbios de
+períodos anteriores <span class="citation">Pinto et al. (2008)</span>, e, algebricamente é dado por:</p>
+<p><span class="math display">\[\begin{align*}
+Y_t = c + \sum_{t=1}^{p} \phi_i Y_{t-i} + \sum_{i=1}^{q} \theta_{i} \epsilon_{t-i} + \varepsilon_t \hspace{0.3cm} t=min(p, q) + 1, min(p, q) + 2,\ldots,n.
+\end{align*}\]</span></p>
+<p>A estrutura do modelo ARMA(p, q) tem p termos auto-regressivos, que representam
+a ordem de defasagens do termo auto-regressivo; e q termos de médias móveis,
+sendo que este representa a ordem de defasagens do termo de médias móveis.</p>
+<p>Os modelos descritos anteriormente funcionam para séries estacionárias, porém,
+na prática a grande maioria das séries são não-estacionárias. Desta forma, estas
+séries precisam ser defasadas para atingir a condição de estacionariedade,
+processo também definido como diferenciação, assim, o número de defasagens d
+necessárias para a obtenção da estacionariedade determinará o grau de integração
+da variável (<span class="citation">Pinto et al. (2008)</span>). Ou seja, uma série inicialmente não-estacionária deverá
+ser defasada d vezes até atingir uma forma estacionária.</p>
+<p>Para relizar a defasagem na série é necessário definir o operador de defasagem (LAG):</p>
+<p><span class="math display">\[
+L^n y_t = y_{t-n}, \hspace{0.3cm} \text{em que } t &gt; n.
+\]</span></p>
+<p>A série defasada <span class="math inline">\(n\)</span> vezes pode ser denotada por:</p>
+<p><span class="math display">\[
+(1 - L)^n y_t = y_{t} - \sum_{i=1}^{n} y_{t-i}.
+\]</span></p>
+<p>Assim como os modelos ARMA, o modelo ARIMA possuí termos AR e MA. Os termos
+auto-regressivos correspondem a defasagens da série transformada (isto é, série
+estacionária obtida por diferenciação) e as médias móveis a defasagens dos erros
+aleatórios. O termo “integrado” refere-se ao processo de diferenciação da série
+original para torná-la estacionária (<span class="citation">Resende (2016)</span>). O modelo ARIMA de ordem p, d
+e q, denotado por ARIMA(p, d, q), é dado por:</p>
+<p><span class="math display">\[\begin{align*}
+    (1 - L)^dY_{t} = c + \sum_{i=1}^{p}\phi_i(1 - L)^dY_{t-i} + \sum_{j=1}^{q} \theta_j\epsilon_{t-j} + \varepsilon_t \hspace{0.3cm}
+    t &lt; d, d \leq p \text{ e } d \leq q.
+\end{align*}\]</span></p>
+<p>A estimação dos parâmetros de qualquer um dos modelos apresentados pode ser feita através do método de máxima verossimilhança, substituindo termo de erro para o modelo em questão. De forma geral, a equação que fornece os estimadores é:</p>
+<p><span class="math display">\[\begin{equation*}
+    \mathop{\mathrm{argmax}}\limits_{\boldsymbol{\mathbf{\hat{\Upsilon}}} \in \Theta} L(\boldsymbol{\mathbf{\hat{\Upsilon}}}) = (2\pi)^{-n/2} (\sigma_\varepsilon)^{-n} exp \left (-\sum_{t=d+1}^{n} \frac{{\varepsilon_t}^2}{2{\sigma_\varepsilon^2}}\right)
+\end{equation*}\]</span></p>
+<p>em que <span class="math inline">\(\boldsymbol{\mathbf{\hat{\Upsilon}}}\)</span> é o vetor de estimadores dos parâmetros do modelo e <span class="math inline">\(\varepsilon_t\)</span> é o termo de erro do modelo. Em geral, é utilizado algum método numérico de maximização de funções para obtenção do vetor <span class="math inline">\(\boldsymbol{\mathbf{\hat{\Upsilon}}}\)</span>.</p>
+<p>Para obter o intervalo de previsão para <span class="math inline">\(\hat{y}_{t+\tau}\)</span>, fazemos:</p>
+<p><span class="math display">\[\begin{equation*}
+    \hat{y}_{t+\tau} \pm z_{\alpha/2} \sqrt{\hat{Var}(\hat{y}_{t+\tau})}
+\end{equation*}\]</span></p>
+<p>em que <span class="math inline">\(z_{\alpha/2}\)</span> é o quantil da distribuição Normal que fornece
+<span class="math inline">\(1-\frac{\alpha}{2}\%\)</span> de confiança. Caso <span class="math inline">\({\sigma_\varepsilon^2}\)</span> seja desconhecido, devemos estimá-lo e a distribuição exata será <span class="math inline">\(T\)</span> com <span class="math inline">\(n-p+q\)</span> graus de liberdade, contudo, assintóticamente, a distribuição ainda será Normal. Os intervalos de confiança para os parâmetros e valores ajustados são construídos de forma similar.</p>
+<p>É importante mencionar que o método de estimação apresentado só é válido quando os erros têm distribuição normal com variância constante. Em casos que isso não seja verificado, a estimação pode ser feita utilizando o método dos momento ou o método de mínimos quadrados. Para mais detalhes sobre esses métodos, recomendamos a leitura de <span class="citation">Hamilton (1994)</span>.</p>
+<p>Para a escolha do melhor modelo, pode-se ajustar diversos modelos aos dados e usar como critério o AIC (Akaike Information Criteria). Basicamente pode-se traduzir como a estimativa da informação perdida quando um modelo é usado para representar o processo que gerou os dados. A definição mais comumente utilizada é:</p>
+<p><span class="math display">\[
+AIC = -2l(\boldsymbol{\mathbf{\hat{\Upsilon}}}; \boldsymbol{\mathbf{y}}) + 2p.
+\]</span></p>
+<p>onde <span class="math inline">\(p\)</span> é o número de parâmetros do modelo e <span class="math inline">\(l(\boldsymbol{\mathbf{\hat{\Upsilon}}}; \boldsymbol{\mathbf{y}})\)</span> é a moda da função log-verossimilhança.</p>
+<p>O AIC pode assumir quaisquer valores, mesmo negativos, já que dependem da função de verossimilhança. Em uma comparação entre os modelos, o menor valor de AIC pode ser um meio de seleção, ou seja, quando menor o AIC, menor a perda de informações.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introdução.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="dados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

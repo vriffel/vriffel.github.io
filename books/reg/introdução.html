@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introdução | Modelo de regressão linear para precificação de processadores</title>
+  <meta name="description" content="1 Introdução | Modelo de regressão linear para precificação de processadores" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introdução | Modelo de regressão linear para precificação de processadores" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introdução | Modelo de regressão linear para precificação de processadores" />
+  
+  
+  
+
+<meta name="author" content="Ana Rosária Zucon" />
+<meta name="author" content="Vinicius Ricardo Riffel" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="material-e-métodos.html"/>
+<script src="libs/header-attrs-2.6.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="material-e-métodos.html"><a href="material-e-métodos.html"><i class="fa fa-check"></i><b>2</b> Material e métodos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="material-e-métodos.html"><a href="material-e-métodos.html#coleta-de-dados"><i class="fa fa-check"></i><b>2.1</b> Coleta de dados</a></li>
+<li class="chapter" data-level="2.2" data-path="material-e-métodos.html"><a href="material-e-métodos.html#metodologia"><i class="fa fa-check"></i><b>2.2</b> Metodologia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html"><i class="fa fa-check"></i><b>3</b> Resultados e dicussão</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#análise-descritiva"><i class="fa fa-check"></i><b>3.1</b> Análise descritiva</a></li>
+<li class="chapter" data-level="3.2" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#ajuste-do-modelo"><i class="fa fa-check"></i><b>3.2</b> Ajuste do modelo</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#medidas-corretivas"><i class="fa fa-check"></i><b>3.2.1</b> Medidas corretivas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#discussão"><i class="fa fa-check"></i><b>3.3</b> Discussão</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conclusão.html"><a href="conclusão.html"><i class="fa fa-check"></i><b>4</b> Conclusão</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="conclusão.html"><a href="conclusão.html#trabalhos-futuros"><i class="fa fa-check"></i><b>4.1</b> Trabalhos futuros</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>5</b> Anexos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="anexos.html"><a href="anexos.html#medidas-de-influência"><i class="fa fa-check"></i><b>5.1</b> Medidas de influência</a></li>
+<li class="chapter" data-level="5.2" data-path="anexos.html"><a href="anexos.html#seleção-de-modelos"><i class="fa fa-check"></i><b>5.2</b> Seleção de modelos</a></li>
+<li class="chapter" data-level="5.3" data-path="anexos.html"><a href="anexos.html#intervalo-de-confiança-para-os-parâmetros"><i class="fa fa-check"></i><b>5.3</b> Intervalo de confiança para os parâmetros</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modelo de regressão linear para precificação de processadores</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introdução" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introdução</h1>
+<p>A compra de dispositivos tecnológicos é facilmente realizada através de sites de
+compra online. Antes o cliente estava acostumado a procurar soluções para sua
+vida tomando para si o que existia no mercado independente da adequação do
+produto ou serviço para seu propósito (<span class="citation">Flores (2013)</span>). Atualmente o mercado <em>gamer</em>
+é um dos mercados mais exigentes em termos de escolha de dispositivos
+tecnológicos de forma que atenda suas necessidades operacionais. Em 2018,
+somente esse mercado movimentou em média 1,5 bilhão de dólares no Brasil, sendo
+o Brasil o 13° maior mercado do mundo (<span class="citation">Newzoo (2018)</span>).</p>
+<p>Além do mercado de games também há nichos que exigem alta performance de seus
+dispositivos, como por exemplo empresas e pessoas que processam enorme
+quantidade de dados, softwares com alto custo computacional, entre
+outros. Segundo o site Tecmundo,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> em 2015, no caso do mercado de games, a
+experiência do jogo está diretamente ligada ao conjunto completo, de modo que a
+RAM, o processador, a placa-mãe, a placa de rede, a placa de som e todos os
+periféricos devem acompanhar a performance do chip gráfico.</p>
+<p>Nesse contexto, esses nichos são conhecidos por montar independentemente seus
+computadores, através da compra de peças isoladas e posterior montagem, de forma
+a obter um dispositivo otimizado para suas necessidades. O usuário deve estar
+atento às especificações técnicas do produto no momento da compra do seu
+equipamento, e não somente ao apelo visual (<span class="citation">Lima, Jacques, and Bernandes (2020)</span>). Dessa
+forma, um dos componentes determinantes para a qualidade de um computador é o
+processador.</p>
+<p>A decisão de compra de um processador envolve a checagem de diversos aspectos,
+tais como: marca, frequência de processamento, número de núcleos, RAM, potência
+etc. Intuitivamente, quanto maior a quantidade de recursos e capacidade de
+processamento, melhor o processador e maior valor monetário. Uma das formas mais
+usuais de checar se há relação entre variáveis é a partir de modelos de
+regressão.</p>
+<p>Os modelos de regressão são úteis situações em que é necessário quantificar a
+relação entre variáveis. Essas técnicas assumem que a variável resposta
+condicionada às covariáveis tem alguma distribuição de probabilidade. Uma vez
+que essa suposição é feita, conseguimos obter medidas dessa condicional
+(esperança, variância, quantil etc). A obtenção dessas medidas é feita por meio
+de alguma função das covariáveis e dos parâmetros do modelo.</p>
+<p>É importante ressaltar que os modelos regressão quantificam a <em>associação</em> entre
+as covariáveis e a variável reposta. Isto é, com ressalvas aos estudos
+experimentais, não podemos concluir que as covariáveis <em>causam</em> a variável
+resposta. Há um ramo da estatística que estuda essas relações de <em>causação</em>,
+mais detalhes podem ser visto em <span class="citation">Pearl (2011)</span>.</p>
+<p>Dessa forma, o presente estudo teve como objetivo analisar, por meio de um
+modelo de regressão, a relação entre o preço do processador e 3 de suas
+características: ano de lançamento, frequência máxima de processamento (em GHz)
+e número de núcleos de processamento.</p>
+
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://www.tecmundo.com.br/video-game-e-jogos/86316-define-maquina-gamer.htm" class="uri">https://www.tecmundo.com.br/video-game-e-jogos/86316-define-maquina-gamer.htm</a>. Acessado em 23/03/2021<a href="introdução.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="material-e-métodos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

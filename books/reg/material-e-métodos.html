@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Material e métodos | Modelo de regressão linear para precificação de processadores</title>
+  <meta name="description" content="2 Material e métodos | Modelo de regressão linear para precificação de processadores" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Material e métodos | Modelo de regressão linear para precificação de processadores" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Material e métodos | Modelo de regressão linear para precificação de processadores" />
+  
+  
+  
+
+<meta name="author" content="Ana Rosária Zucon" />
+<meta name="author" content="Vinicius Ricardo Riffel" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introdução.html"/>
+<link rel="next" href="resultados-e-dicussão.html"/>
+<script src="libs/header-attrs-2.6.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="material-e-métodos.html"><a href="material-e-métodos.html"><i class="fa fa-check"></i><b>2</b> Material e métodos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="material-e-métodos.html"><a href="material-e-métodos.html#coleta-de-dados"><i class="fa fa-check"></i><b>2.1</b> Coleta de dados</a></li>
+<li class="chapter" data-level="2.2" data-path="material-e-métodos.html"><a href="material-e-métodos.html#metodologia"><i class="fa fa-check"></i><b>2.2</b> Metodologia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html"><i class="fa fa-check"></i><b>3</b> Resultados e dicussão</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#análise-descritiva"><i class="fa fa-check"></i><b>3.1</b> Análise descritiva</a></li>
+<li class="chapter" data-level="3.2" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#ajuste-do-modelo"><i class="fa fa-check"></i><b>3.2</b> Ajuste do modelo</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#medidas-corretivas"><i class="fa fa-check"></i><b>3.2.1</b> Medidas corretivas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#discussão"><i class="fa fa-check"></i><b>3.3</b> Discussão</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conclusão.html"><a href="conclusão.html"><i class="fa fa-check"></i><b>4</b> Conclusão</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="conclusão.html"><a href="conclusão.html#trabalhos-futuros"><i class="fa fa-check"></i><b>4.1</b> Trabalhos futuros</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>5</b> Anexos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="anexos.html"><a href="anexos.html#medidas-de-influência"><i class="fa fa-check"></i><b>5.1</b> Medidas de influência</a></li>
+<li class="chapter" data-level="5.2" data-path="anexos.html"><a href="anexos.html#seleção-de-modelos"><i class="fa fa-check"></i><b>5.2</b> Seleção de modelos</a></li>
+<li class="chapter" data-level="5.3" data-path="anexos.html"><a href="anexos.html#intervalo-de-confiança-para-os-parâmetros"><i class="fa fa-check"></i><b>5.3</b> Intervalo de confiança para os parâmetros</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modelo de regressão linear para precificação de processadores</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="material-e-métodos" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Material e métodos</h1>
+<div id="coleta-de-dados" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Coleta de dados</h2>
+<p>Os dados foram coletados via web scrapping no site Mercado Livre usando o pacote
+<code>rvest</code> (<span class="citation">Wickham (2020)</span>) do software <code>R</code> (<span class="citation">R Core Team (2021)</span>) nos dias 03/03/2021 e 11/03/2021. Eles
+se referem a anúncios de processadores de computadores de mesa das marcas AMD e
+Intel. Como covariáveis utilizamos o ano de lançamento do processador, a
+frequência máxima de processamento (em GHz) e o número de núcleos de
+processamento. Embora não seja usada como covariável, mantívemos a marca dos
+processadores. Evidentemente, a variável resposta é o preço do processador.</p>
+<p>Na primeira amostragem, do dia 03/03/2021, selecionamos 670 anúncios. Porém,
+removemos 311 anúncios que estavam com dados faltantes ou não eram anúncios de
+processadores para computadores de mesa (a maioria deles eram kits que incluiam
+um processador, mas haviam processadores para celulares, notebooks e
+outros. Um problema recorrente encontrado foi o vendendor confundir a quantidade
+de <code>threads</code> e núcleos de processamento, para esses casos, nós assinalamos os
+valores corretos para os dados, checando a informação no site do
+fabricante). Nessa primeira amostragem, constatamos que o valor da variável
+resposta não estava inteiramente coberto, isto é, não havia dados suficientes
+para processadores com preço maior que 3,000 R$. Para ser preciso, apenas 21
+observações. Para resolver esse problema, no dia 11/03/2021 coletamos mais
+dados, porém fixamos o preço mínimo dos anúncios em 3,000 R$. Nessa segunda
+amostragem, coletamos 155 dados com essa característica de preço, tomando o
+devido cuidado para não haver dados duplicados e removendo as observações
+indevidas, totalizando 514 observações.</p>
+
+</div>
+<div id="metodologia" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Metodologia</h2>
+<p>Nessa subseçao descrevemos as metodologias utilizadas para os ajustes dos
+modelos. Ela foi baseada tanto no material disponibilizados pelos professores
+quanto nos livros <span class="citation">Faraway (2014)</span> e <span class="citation">Montgomery, Peck, and Vining (2006)</span>.</p>
+<p>Um modelo de regressão linear é uma método estatístico que procura identificar
+relações de associação entre as covariáveis e a variável resposta. Em nosso
+trabalho, buscamos obter o preço médio do preço dado o ano de lançamento,
+frequência máxima e número de núcleos de processamento do
+processados. Condicionando o preço essas covariáveis temos que:</p>
+<p><span class="math display">\[
+Y_i | \mathbf{x}_i^t = \beta_0 + \beta_1x_{ifreq} + \beta_2x_{inucleos} + \beta_3x_{iano} + \varepsilon_i \hspace{0.2cm} i = 1, 2, \ldots, n.
+\]</span></p>
+<p>Então, a equação do modelo é da forma:</p>
+<p><span class="math display">\[
+E(Y_i | \mathbf{x}_i^t) = \hat{\beta_0} + \hat{\beta_1}x_{ifreq} + \hat{\beta_2} x_{inucleos} + \hat{\beta_3} x_{iano}
+\]</span></p>
+<p>Assumindo que:</p>
+<ul>
+<li><p><span class="math inline">\(E(\varepsilon_i) = 0\)</span>.</p></li>
+<li><p><span class="math inline">\(Var(\varepsilon_i) = \sigma^2\)</span> (constante).</p></li>
+<li><p><span class="math inline">\(Cov(\varepsilon_i, \varepsilon_j) = 0 \hspace{0.2cm} i \neq j\)</span>.</p></li>
+<li><p>As covariáveis não são estocásticas.</p></li>
+<li><p><span class="math inline">\(\varepsilon_i \sim N(0, \sigma^2)\)</span>.</p></li>
+</ul>
+<p>A estimação pode ser feita pelo método dos mínimos quadrados ou máxima
+verossimilhanaça, ambas fornecerão os mesmos valores. Caso todas as premissas
+sejam verdadeiras, os estimadores obtidos por máxima verossimilhança ou mínimos
+quadrados são os melhores dentro da classe dos estimadores lineares (teorema de
+Gauss-Markov). Também, isso implacará que os estimadores terão distribuição
+(assintótica) Normal. Com isso, podemos construir intervalos de confiança e
+testes hipóteses das maneiras usuais.</p>
+<p>A partir disso, com a inferência sobre os parâmetros do modelo nos permite
+checar a significância do modelo, variáveis explicativas mais relevantes na
+análise e avaliar o erro de estimativas das predições geradas pelo modelo
+ajustado.</p>
+<p>Em algumas situações a relação entre a variável resposta <span class="math inline">\(Y\)</span> e alguma covariável
+<span class="math inline">\(X_k\)</span> não pode ser descrita por uma reta, mas por um polinômio de ordem
+<span class="math inline">\(p\)</span>. Neste caso, essa variável deverá ser adicionada ao modelo com seus termos
+de maior ordem. O modelo para uma covariável <span class="math inline">\(X_k\)</span> fica dado por:</p>
+<p><span class="math display">\[
+E(Y_i | \mathbf{x}_{ki}^t) = \hat{\beta_0} + \hat{\beta_1}x_{ki} + \hat{\beta_2} x_{ki}^2 + \ldots + \hat{\beta_p} x_{ki}^p \hspace{0.2cm} i = 1, 2, \ldots, n.
+\]</span></p>
+<p>isso é chamado de <em>regressão polinomial</em>. As premissas e os métodos de
+estimação mencionados anteriormente continuam os mesmos. A intepretação desse
+tipo de modelo fica limitada ao intervalo de estudo - a menos que seja
+conhecida a extrapolação do fenômeno.</p>
+<p>Uma vez que temos o modelo ajustado aos dados, devemos verificar a qualidade
+desse ajuste e se as premissas estão sendo cumpridas. Essa verificação é chamada
+de <em>análise de diagnóstico</em>. Ela pode ser realizada por inspeções gráficas e
+buscamos problemas como:</p>
+<ul>
+<li><p>Falta de ajuste: as covariáveis não são suficientes para explicar a variável
+resposta. Buscamos padrões sistemáticos que podem indicar especificação
+incorreta do preditor do modelo.</p></li>
+<li><p>Violações das premissas: relação entre média e variância nos resíduos
+(variância não constante); resíduos que não se adequam a uma distribuição
+Normal.</p></li>
+<li><p>Pontos influentes: observações (podem ser outliers ou não) que influciam para
+os valores estimados para os parâmetros, valores ajustados, variância do
+resíduo etc.</p></li>
+</ul>
+<p>A falta de ajuste e variância não constante podem ser verificadas por meio de um
+gráfico de resíduos vs valores ajustados. A normalidade pode-se checar por meio
+de um gráfico quantil-quantil. Os pontos influentes são identificados deixando
+uma observação de fora e ajustando o modelo novamente, estas medidas são
+chamadas de <em>leave-one-out</em>.</p>
+<p>Alguns dos casos em que as premissas são violadas há medidas que poder ser
+aplicadas ao modelo que diminuem o impacto da violação. Por exemplo, caso seja
+identificado que o modelo possuí variância não constante, as estimativas obtidas
+pelos métodos mencionados não são eficientes. Neste cenário, pode-se aplicar uma
+transformação nos dados que a deixe constante. Ou ainda, podemos aplicar uma
+transformação em nossa variável resposta para se obter normalidade nos resíduos,
+dentre inumeras medidas corretivas.</p>
+<p>A <em>regressão robusta</em> é um método útil para estimação na presença de <em>outliers</em>
+ou pontos com influência sobre os resultados. Essas observações modificam os
+valores estimados e/ou ajustados em função de sua atípicidade. Esses métodos
+adicionam uma função peso em que os erros são os argumentos na obtenção dos
+parâmetros estimados. Controla-se a magnitunidade dessa função peso por meio de
+um parâmetro de eficiência. Com isso, minimizamos o impacto das observações
+atípicas. A flexibilidade desse tipo de regressão recaí na definição função
+peso, na prática testamos várias dessas funções e verificamos qual produz o
+melhor ajuste.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introdução.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resultados-e-dicussão.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

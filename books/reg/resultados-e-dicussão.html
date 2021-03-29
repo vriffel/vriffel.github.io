@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Resultados e dicussão | Modelo de regressão linear para precificação de processadores</title>
+  <meta name="description" content="3 Resultados e dicussão | Modelo de regressão linear para precificação de processadores" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Resultados e dicussão | Modelo de regressão linear para precificação de processadores" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Resultados e dicussão | Modelo de regressão linear para precificação de processadores" />
+  
+  
+  
+
+<meta name="author" content="Ana Rosária Zucon" />
+<meta name="author" content="Vinicius Ricardo Riffel" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="material-e-métodos.html"/>
+<link rel="next" href="conclusão.html"/>
+<script src="libs/header-attrs-2.6.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="material-e-métodos.html"><a href="material-e-métodos.html"><i class="fa fa-check"></i><b>2</b> Material e métodos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="material-e-métodos.html"><a href="material-e-métodos.html#coleta-de-dados"><i class="fa fa-check"></i><b>2.1</b> Coleta de dados</a></li>
+<li class="chapter" data-level="2.2" data-path="material-e-métodos.html"><a href="material-e-métodos.html#metodologia"><i class="fa fa-check"></i><b>2.2</b> Metodologia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html"><i class="fa fa-check"></i><b>3</b> Resultados e dicussão</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#análise-descritiva"><i class="fa fa-check"></i><b>3.1</b> Análise descritiva</a></li>
+<li class="chapter" data-level="3.2" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#ajuste-do-modelo"><i class="fa fa-check"></i><b>3.2</b> Ajuste do modelo</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#medidas-corretivas"><i class="fa fa-check"></i><b>3.2.1</b> Medidas corretivas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#discussão"><i class="fa fa-check"></i><b>3.3</b> Discussão</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conclusão.html"><a href="conclusão.html"><i class="fa fa-check"></i><b>4</b> Conclusão</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="conclusão.html"><a href="conclusão.html#trabalhos-futuros"><i class="fa fa-check"></i><b>4.1</b> Trabalhos futuros</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>5</b> Anexos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="anexos.html"><a href="anexos.html#medidas-de-influência"><i class="fa fa-check"></i><b>5.1</b> Medidas de influência</a></li>
+<li class="chapter" data-level="5.2" data-path="anexos.html"><a href="anexos.html#seleção-de-modelos"><i class="fa fa-check"></i><b>5.2</b> Seleção de modelos</a></li>
+<li class="chapter" data-level="5.3" data-path="anexos.html"><a href="anexos.html#intervalo-de-confiança-para-os-parâmetros"><i class="fa fa-check"></i><b>5.3</b> Intervalo de confiança para os parâmetros</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modelo de regressão linear para precificação de processadores</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="resultados-e-dicussão" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Resultados e dicussão</h1>
+<div id="análise-descritiva" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Análise descritiva</h2>
+<p>A Figura <a href="resultados-e-dicussão.html#fig:exploratoria">3.1</a> mostra um gráfico de pontos das variáveis da
+base versus as outras com uma reta ajustada via regressão linear simples, um
+gráfico de barras (ou histograma, para as variáveis contínuas) e o coeficiente
+de correlação produto-momento das variáveis. A base de dados contém 514 anúncios
+de processadores de computadores de mesa das marcas AMD e Intel. Há
+processadores com data de lançamento de 2005 até 2020. Na base há 205
+observações de processadores AMD e 309 de processadores Intel. O preço está em
+R$ e a frequência máxima de processamento está em GHz. A variável
+<code>preco_transformado</code> é variável resposta após uma transformação raíz
+quinta. Nessa escala, os dados têm melhor comportamento do que na escala
+original, a correlação entre as variáveis teve uma melhoria e a variabilidade é
+menor. Encontramos esse valor através de método de Box-Cox (<span class="citation">Box and Cox (1964)</span>).</p>
+<div class="figure" style="text-align: center"><span id="fig:exploratoria"></span>
+<img src="projeto_files/figure-html/exploratoria-1.png" alt="Análise descritiva do conjunto de dados com uma reta ajustada via regressão linear simples entre as variáveis e o coeficiente de correlação de Pearson." width="960" />
+<p class="caption">
+Figura 3.1: Análise descritiva do conjunto de dados com uma reta ajustada via regressão linear simples entre as variáveis e o coeficiente de correlação de Pearson.
+</p>
+</div>
+<p>Podemos ver que as covariáveis são correlacionadas linearmente entre si e
+correlacionadas com a variável resposta, essas correlações sempre positivas.</p>
+<p>Para o ajuste do modelo, vamos utilizar o preço transformado. Também, notamos
+que uma reta não é suficiente para explicar a relação entre a variável resposta
+e as demais covariáveis.</p>
+<p>A variável resposta é assimétrica em ambas escalas, porém com a transformação
+isso reduziu. Percebemos que há poucos anúncios de processadores com mais de 10
+núcleos e de processadores mais antigos. Ainda, não parece haver diferença média
+significativa entre as marcas.</p>
+</div>
+<div id="ajuste-do-modelo" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Ajuste do modelo</h2>
+<p>Após testar diversos modelos, o que melhor se ajustou aos dados foi:</p>
+<p><span class="math display">\[
+E(Y_i | \mathbf{x}_i^t) = \hat{\beta_0} + \hat{\beta_1}x_{ifreq} + \hat{\beta_2} x_{ifreq}^2 + \hat{\beta_3} x_{ifreq}^3 + \hat{\beta_4}x_{iano} + \hat{\beta_5} x_{iano}^2 + \hat{\beta_6} x_{iano}^3 + \hat{\beta_7} x_{inucleos} + \hat{\beta_8} x_{inucleos}^2
+\]</span></p>
+<p>No anexo do projeto encontra-se uma tabela comparando a critérios
+de qualidade de ajuste para diversos modelos ajustados aos dados.</p>
+<p>Ajustamos os modelos no software <code>R</code> (<span class="citation">R Core Team (2021)</span>). Utlizamos a função <code>poly</code> para
+encontrar polinômios ortogonais para as variáveis. A desvantagem de sua
+utilização é que a interpretação dos valores ajustados não é simples.</p>
+<p>O ajuste e resumo do modelo ajustado estão no Código <a href="resultados-e-dicussão.html#lem:ajuste">3.1</a>:</p>
+
+<div class="lemma">
+<span id="lem:ajuste" class="lemma"><strong>Código 3.1  </strong></span><strong>Ajuste e resumo do modelo.</strong>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="resultados-e-dicussão.html#cb1-1" aria-hidden="true"></a>dt &lt;-<span class="st"> </span>data.table<span class="op">::</span><span class="kw">fread</span>(<span class="st">&quot;../dados/processadores.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>)</span>
+<span id="cb1-2"><a href="resultados-e-dicussão.html#cb1-2" aria-hidden="true"></a></span>
+<span id="cb1-3"><a href="resultados-e-dicussão.html#cb1-3" aria-hidden="true"></a><span class="co">## Ajusta o modelo</span></span>
+<span id="cb1-4"><a href="resultados-e-dicussão.html#cb1-4" aria-hidden="true"></a>fit &lt;-<span class="st"> </span><span class="kw">lm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(Freq, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Nucleos, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Ano, <span class="dv">3</span>), <span class="dt">data =</span> dt)</span>
+<span id="cb1-5"><a href="resultados-e-dicussão.html#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="resultados-e-dicussão.html#cb1-6" aria-hidden="true"></a><span class="co">## Resumo do ajuste</span></span>
+<span id="cb1-7"><a href="resultados-e-dicussão.html#cb1-7" aria-hidden="true"></a><span class="kw">summary</span>(fit)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Preco^0.2 ~ poly(Freq, 3) + poly(Nucleos, 2) + poly(Ano, 
+##     3), data = dt)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.73608 -0.11750 -0.00553  0.12822  0.66145 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)        4.192944   0.009105 460.510  &lt; 2e-16 ***
+## poly(Freq, 3)1     9.107335   0.472834  19.261  &lt; 2e-16 ***
+## poly(Freq, 3)2     0.639123   0.266753   2.396  0.01694 *  
+## poly(Freq, 3)3    -0.803299   0.244029  -3.292  0.00107 ** 
+## poly(Nucleos, 2)1 11.433445   0.302089  37.848  &lt; 2e-16 ***
+## poly(Nucleos, 2)2 -2.599557   0.321110  -8.096 4.29e-15 ***
+## poly(Ano, 3)1      3.700255   0.377977   9.790  &lt; 2e-16 ***
+## poly(Ano, 3)2     -0.828141   0.253659  -3.265  0.00117 ** 
+## poly(Ano, 3)3     -2.512418   0.227228 -11.057  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2064 on 505 degrees of freedom
+## Multiple R-squared:  0.9577, Adjusted R-squared:  0.9571 
+## F-statistic:  1430 on 8 and 505 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="resultados-e-dicussão.html#cb3-1" aria-hidden="true"></a><span class="co">## Tabela ANOVA</span></span>
+<span id="cb3-2"><a href="resultados-e-dicussão.html#cb3-2" aria-hidden="true"></a><span class="kw">anova</span>(fit)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: Preco^0.2
+##                   Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
+## poly(Freq, 3)      3 402.93 134.311 3152.005 &lt; 2.2e-16 ***
+## poly(Nucleos, 2)   2  74.50  37.251  874.213 &lt; 2.2e-16 ***
+## poly(Ano, 3)       3  10.02   3.341   78.407 &lt; 2.2e-16 ***
+## Residuals        505  21.52   0.043                       
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Os resultados mostram que o modelo teve um bom ajuste. A
+quantidade explicada pela regressão (<span class="math inline">\(R^2\)</span>) mostra que o modelo explicou bem a
+variação dos preços. Nota-se que o <span class="math inline">\(R^2\)</span> ajustado (o que penaliza por número de
+parâmetros) ficou próximo ao valor não penalizado.</p>
+<p>Pelos valores do fator de inflação de variância generalizado, não há indício de
+multicolinearidade no ajuste.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="resultados-e-dicussão.html#cb5-1" aria-hidden="true"></a>car<span class="op">::</span><span class="kw">vif</span>(fit)</span></code></pre></div>
+<pre><code>##                       GVIF Df GVIF^(1/(2*Df))
+## poly(Freq, 3)    11.366183  3        1.499463
+## poly(Nucleos, 2)  3.616474  2        1.379022
+## poly(Ano, 3)      6.085672  3        1.351195</code></pre>
+<p>O modelo declarado não apresenta falta de ajuste, como pode ser visto nas
+Figuras <a href="resultados-e-dicussão.html#fig:residualplotsfit1">3.2</a> e <a href="resultados-e-dicussão.html#fig:plotbasicofit1">3.3</a>. A Figura
+<a href="resultados-e-dicussão.html#fig:plotbasicofit1">3.3</a> mostra que a relação do tipo média-variância não está
+ideal. Também, os resíduos se adequaram bem à distribuição Normal, com fuga de
+alguns pontos nas caudas. A Figura <a href="resultados-e-dicussão.html#fig:influenceplotfit1">3.4</a> mostra que há
+pontos com alta alavancagem e influentes. As observações influentes não devem
+ser retiradas, uma vez que seus registros foram verificados e elas fazem parte
+da população de interesse. Além disso, há poucos poucas observações nos maiores
+valores do domínio do preço, como foi visto na análise descritiva dos
+dados. Nessa área, os resíduos parecem ter uma variância diferente dos
+anteriores.</p>
+<div class="figure" style="text-align: center"><span id="fig:residualplotsfit1"></span>
+<img src="projeto_files/figure-html/residualplotsfit1-1.png" alt="Análise de diagnóstico do primeiro modelo ajustado. Resíduos versus cada termo de maior ordem do modelo." width="768" />
+<p class="caption">
+Figura 3.2: Análise de diagnóstico do primeiro modelo ajustado. Resíduos versus cada termo de maior ordem do modelo.
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:plotbasicofit1"></span>
+<img src="projeto_files/figure-html/plotbasicofit1-1.png" alt="Análise de diagnóstico do primeiro modelo ajustado. Resíduos versus valores ajustado (superior esquerda), raíz quadrada do valor absoluto dos resíduos padronizados (inferior esquerda), gráfico quantil-quantil dos resíduos (superior direita) e resíduos padronizados versus alavancagem (inferior direita)." width="768" />
+<p class="caption">
+Figura 3.3: Análise de diagnóstico do primeiro modelo ajustado. Resíduos versus valores ajustado (superior esquerda), raíz quadrada do valor absoluto dos resíduos padronizados (inferior esquerda), gráfico quantil-quantil dos resíduos (superior direita) e resíduos padronizados versus alavancagem (inferior direita).
+</p>
+</div>
+<div class="figure" style="text-align: center"><span id="fig:influenceplotfit1"></span>
+<img src="projeto_files/figure-html/influenceplotfit1-1.png" alt="Análise de diagnóstico do primeiro modelo ajustado. Gráfico de influência dos resíduos. Quanto maior for o círculo, maior é a distância de Cook." width="576" />
+<p class="caption">
+Figura 3.4: Análise de diagnóstico do primeiro modelo ajustado. Gráfico de influência dos resíduos. Quanto maior for o círculo, maior é a distância de Cook.
+</p>
+</div>
+<pre><code>##       StudRes        Hat      CookD
+## 158 -3.380072 0.21226754 0.33515083
+## 276 -3.653400 0.02404898 0.03567219
+## 332 -1.368472 0.27655660 0.07940705</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="projeto_files/figure-html/unnamed-chunk-5-1.png" alt="Análise de diagnósico do primeiro modelo ajustado. Outras medidas de influência para cada resíduo." width="768" />
+<p class="caption">
+Figura 3.5: Análise de diagnósico do primeiro modelo ajustado. Outras medidas de influência para cada resíduo.
+</p>
+</div>
+<div id="medidas-corretivas" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Medidas corretivas</h3>
+<p>Para lidar com os pontos influentes, ajustamos uma regressão robusta com
+<span class="math inline">\(\psi_{Biweight}\)</span>. Fixando a constante dessa regressão em <span class="math inline">\(k = 4.685\)</span> para 95%
+de eficiência. Esse ajuste é feito no Código <a href="resultados-e-dicussão.html#lem:ajuste2">3.2</a>.</p>
+
+<div class="lemma">
+<span id="lem:ajuste2" class="lemma"><strong>Código 3.2  </strong></span><strong>Regressão robusta com pesos <span class="math inline">\(\mathbf{\psi_{Biweight}}\)</span> e ponderação na variância</strong>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="resultados-e-dicussão.html#cb8-1" aria-hidden="true"></a><span class="co">## Ajusta o modelo</span></span>
+<span id="cb8-2"><a href="resultados-e-dicussão.html#cb8-2" aria-hidden="true"></a>fit2 &lt;-<span class="st"> </span>MASS<span class="op">::</span><span class="kw">rlm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(Freq, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Nucleos, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Ano, <span class="dv">3</span>),</span>
+<span id="cb8-3"><a href="resultados-e-dicussão.html#cb8-3" aria-hidden="true"></a>                  <span class="dt">data =</span> dt, <span class="dt">psi =</span> MASS<span class="op">::</span>psi.bisquare)</span></code></pre></div>
+<p>Resumo do modelo:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="resultados-e-dicussão.html#cb9-1" aria-hidden="true"></a><span class="kw">summary</span>(fit2)</span></code></pre></div>
+<pre><code>## 
+## Call: rlm(formula = Preco^0.2 ~ poly(Freq, 3) + poly(Nucleos, 2) + 
+##     poly(Ano, 3), data = dt, psi = MASS::psi.bisquare)
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.733963 -0.120638 -0.004154  0.129846  0.660298 
+## 
+## Coefficients:
+##                   Value    Std. Error t value 
+## (Intercept)         4.1922   0.0092   456.9444
+## poly(Freq, 3)1      9.1225   0.4764    19.1475
+## poly(Freq, 3)2      0.5298   0.2688     1.9710
+## poly(Freq, 3)3     -0.8512   0.2459    -3.4616
+## poly(Nucleos, 2)1  11.4633   0.3044    37.6599
+## poly(Nucleos, 2)2  -2.6577   0.3236    -8.2140
+## poly(Ano, 3)1       3.7151   0.3809     9.7545
+## poly(Ano, 3)2      -0.7895   0.2556    -3.0887
+## poly(Ano, 3)3      -2.6392   0.2290   -11.5271
+## 
+## Residual standard error: 0.1799 on 505 degrees of freedom</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="resultados-e-dicussão.html#cb11-1" aria-hidden="true"></a><span class="kw">anova</span>(fit2)</span></code></pre></div>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: Preco^0.2
+##                  Df Sum Sq Mean Sq F value Pr(&gt;F)
+## poly(Freq, 3)     3 359.95 119.982               
+## poly(Nucleos, 2)  2  67.46  33.732               
+## poly(Ano, 3)      3   9.11   3.037               
+## Residuals            21.56</code></pre>
+<p>Houve uma ligeira mudança nos valores dos parâmetros estimados, não iremos
+remover o coeficiente não significativo para (<span class="math inline">\(\alpha = 0.05\)</span>) pelo princípio da
+hierarquia.</p>
+<p>O diagnóstico dessa correção está na Figura <a href="resultados-e-dicussão.html#fig:plotbasicofit2">3.6</a>. Com essa
+modificação, ainda constatamos um leve decaímento da variância com o aumento da
+média do preço. Os resíduos ainda aparentam ter distribuição Normal, com algumas
+fugas nas caudas. Ainda há pontos com influentes com alavancagem alta, porem em
+menor escala que o ajuste anterior. Também, notamos que com a modificação alguns
+pontos têm resíduos padronizados maiores que os anteriores, e até mesmo alguns
+candidatos a outlier. Não há razão para removê-los, uma vez que as observações
+são da população e não apresentam erro de registro.</p>
+<div class="figure" style="text-align: center"><span id="fig:plotbasicofit2"></span>
+<img src="projeto_files/figure-html/plotbasicofit2-1.png" alt="Análise de diagnóstico do segundo modelo ajustado. Resíduos versus valores ajustado (superior esquerda), raíz quadrada do valor absoluto dos resíduos padronizados (inferior esquerda), gráfico quantil-quantil dos resíduos (superior direita) e resíduos padronizados versus alavancagem (inferior direita)." width="768" />
+<p class="caption">
+Figura 3.6: Análise de diagnóstico do segundo modelo ajustado. Resíduos versus valores ajustado (superior esquerda), raíz quadrada do valor absoluto dos resíduos padronizados (inferior esquerda), gráfico quantil-quantil dos resíduos (superior direita) e resíduos padronizados versus alavancagem (inferior direita).
+</p>
+</div>
+</div>
+</div>
+<div id="discussão" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Discussão</h2>
+<p>Nessa seção fizemos a análise descritiva e quantitativa dos dados
+coletados. Logo na análise descritiva identificamos que a variável reposta
+estava em uma escala não adequada e aplicamos uma transformação Box-Cox que
+facilitou a construção posterior do modelo. Também constatamos que as
+covariáveis escolhidas para a análise eram correlacionadas ao preço, indicando
+que poderiam fornecer um bom ajuste. Isso se constatou logo no primeiro ajuste
+do modelo, realizado no Código <a href="resultados-e-dicussão.html#lem:ajuste">3.1</a>, porém ainda havia problemas
+nos resíduos que precisam ser corrigidos. O segundo ajuste, presente no Código
+<a href="resultados-e-dicussão.html#lem:ajuste2">3.2</a>, fez as correções necessárias. O modelo final forneceu uma
+boa explicação da variabilidade do preço, com <span class="math inline">\(R^2\)</span> = 0.956. Embora as covariáveis fossem
+correlacionadas entre si, não houve problema de multiconearidade. Os resultados
+mostram que nossa é razoável hipótese de que o ano de lançamento, o número de
+núcleos e a frequência do processador explicam a variação do preço médio.</p>
+<p>A Figura <a href="resultados-e-dicussão.html#fig:discussao">3.7</a> mostra os valores preditos versus os valores
+observados do modelo ajustado no Código <a href="resultados-e-dicussão.html#lem:ajuste2">3.2</a>. Nota-se que o modelo
+de adequou bem aos dados, especialmente para os processadores de menor
+valor. Também, fica evidente a importância da segunda amostragem, uma vez que
+quase todos os valores maiores que 3,000 R$ foram obtidos através dela.</p>
+<p>Cabe ressaltar que não observamos todo o domínio da covariável nucleos e foi
+ajustado um polinômio de segundo grau para ela, por isso, esse modelo não é
+recomendado para a predição de preço para processadores com mais de 32 núcleos.</p>
+<div class="figure" style="text-align: center"><span id="fig:discussao"></span>
+<img src="projeto_files/figure-html/discussao-1.png" alt="Valores preditos versus valores observados, para o segundo modelo ajustado." width="768" />
+<p class="caption">
+Figura 3.7: Valores preditos versus valores observados, para o segundo modelo ajustado.
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="material-e-métodos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusão.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

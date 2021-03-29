@@ -1,0 +1,16 @@
+eq:ar
+eq:ma
+fig:serie
+lem:kpss
+fig:seriediff
+fig:acfserie
+fig:checkresiduals
+fig:acfres
+fig:qqres
+fig:tempic
+introdução
+sec:materias
+processos-estocásticos
+modelos-para-séries-temporais
+dados
+conclusão

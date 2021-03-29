@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Anexos | Modelo de regressão linear para precificação de processadores</title>
+  <meta name="description" content="5 Anexos | Modelo de regressão linear para precificação de processadores" />
+  <meta name="generator" content="bookdown 0.21.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Anexos | Modelo de regressão linear para precificação de processadores" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Anexos | Modelo de regressão linear para precificação de processadores" />
+  
+  
+  
+
+<meta name="author" content="Ana Rosária Zucon" />
+<meta name="author" content="Vinicius Ricardo Riffel" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="conclusão.html"/>
+<link rel="next" href="bibliografia.html"/>
+<script src="libs/header-attrs-2.6.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a></li>
+<li class="chapter" data-level="1" data-path="introdução.html"><a href="introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="material-e-métodos.html"><a href="material-e-métodos.html"><i class="fa fa-check"></i><b>2</b> Material e métodos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="material-e-métodos.html"><a href="material-e-métodos.html#coleta-de-dados"><i class="fa fa-check"></i><b>2.1</b> Coleta de dados</a></li>
+<li class="chapter" data-level="2.2" data-path="material-e-métodos.html"><a href="material-e-métodos.html#metodologia"><i class="fa fa-check"></i><b>2.2</b> Metodologia</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html"><i class="fa fa-check"></i><b>3</b> Resultados e dicussão</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#análise-descritiva"><i class="fa fa-check"></i><b>3.1</b> Análise descritiva</a></li>
+<li class="chapter" data-level="3.2" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#ajuste-do-modelo"><i class="fa fa-check"></i><b>3.2</b> Ajuste do modelo</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#medidas-corretivas"><i class="fa fa-check"></i><b>3.2.1</b> Medidas corretivas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="resultados-e-dicussão.html"><a href="resultados-e-dicussão.html#discussão"><i class="fa fa-check"></i><b>3.3</b> Discussão</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conclusão.html"><a href="conclusão.html"><i class="fa fa-check"></i><b>4</b> Conclusão</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="conclusão.html"><a href="conclusão.html#trabalhos-futuros"><i class="fa fa-check"></i><b>4.1</b> Trabalhos futuros</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>5</b> Anexos</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="anexos.html"><a href="anexos.html#medidas-de-influência"><i class="fa fa-check"></i><b>5.1</b> Medidas de influência</a></li>
+<li class="chapter" data-level="5.2" data-path="anexos.html"><a href="anexos.html#seleção-de-modelos"><i class="fa fa-check"></i><b>5.2</b> Seleção de modelos</a></li>
+<li class="chapter" data-level="5.3" data-path="anexos.html"><a href="anexos.html#intervalo-de-confiança-para-os-parâmetros"><i class="fa fa-check"></i><b>5.3</b> Intervalo de confiança para os parâmetros</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Modelo de regressão linear para precificação de processadores</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="anexos" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Anexos</h1>
+<p>Aqui estão algumas informações auxiliares que utilizamos para a construção do
+trabalho.</p>
+<div id="medidas-de-influência" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Medidas de influência</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="anexos.html#cb13-1" aria-hidden="true"></a>im1 &lt;-<span class="st"> </span><span class="kw">influence.measures</span>(fit)</span>
+<span id="cb13-2"><a href="anexos.html#cb13-2" aria-hidden="true"></a>im2 &lt;-<span class="st"> </span><span class="kw">influence.measures</span>(fit2)</span>
+<span id="cb13-3"><a href="anexos.html#cb13-3" aria-hidden="true"></a></span>
+<span id="cb13-4"><a href="anexos.html#cb13-4" aria-hidden="true"></a><span class="kw">summary</span>(im1)</span></code></pre></div>
+<pre><code>## Potentially influential observations of
+##   lm(formula = Preco^0.2 ~ poly(Freq, 3) + poly(Nucleos, 2) + poly(Ano,      3), data = dt) :
+## 
+##     dfb.1_ dfb.p(F,3)1 dfb.p(F,3)2 dfb.p(F,3)3 dfb.p(N,2)1 dfb.p(N,2)2
+## 2   -0.10  -0.04        0.03        0.06        0.11       -0.08      
+## 9    0.10  -0.09        0.09        0.14       -0.04        0.04      
+## 52   0.10   0.09       -0.02       -0.08       -0.06        0.02      
+## 64   0.11  -0.15       -0.06        0.12        0.16       -0.16      
+## 65  -0.10  -0.01        0.04        0.08        0.03        0.00      
+## 94  -0.10   0.10       -0.11       -0.08        0.00       -0.02      
+## 149 -0.01   0.01       -0.04        0.03        0.00        0.00      
+## 151  0.14   0.17       -0.05       -0.15       -0.08        0.03      
+## 152  0.05  -0.09        0.20       -0.13       -0.01        0.02      
+## 153  0.02  -0.01        0.07       -0.09       -0.01        0.01      
+## 156 -0.05  -0.07        0.14       -0.14        0.02       -0.02      
+## 158 -0.17  -0.29        0.70       -0.77        0.05       -0.03      
+## 159  0.04  -0.07        0.18       -0.13       -0.01        0.02      
+## 163  0.01  -0.02        0.00        0.01        0.02       -0.02      
+## 185 -0.05  -0.07        0.14       -0.14        0.02       -0.02      
+## 219 -0.12  -0.16        0.15        0.20       -0.06        0.10      
+## 267 -0.10   0.06        0.08        0.04       -0.10        0.15      
+## 270  0.04   0.03        0.01       -0.01        0.13        0.19      
+## 276 -0.16  -0.20        0.20        0.26       -0.08        0.13      
+## 284  0.13  -0.05       -0.05        0.15        0.04       -0.02      
+## 285  0.13  -0.05       -0.05        0.14        0.04       -0.02      
+## 288  0.13  -0.05       -0.05        0.14        0.04       -0.02      
+## 307  0.02   0.01        0.00        0.03       -0.01        0.01      
+## 321  0.00   0.00        0.00        0.00        0.00        0.00      
+## 325 -0.03   0.01       -0.05        0.06        0.01        0.00      
+## 332 -0.07  -0.01       -0.35        0.53        0.10       -0.06      
+## 338 -0.05  -0.04       -0.01        0.01       -0.16       -0.24      
+## 346  0.02   0.01        0.00        0.03       -0.01        0.01      
+## 406  0.03  -0.09       -0.05        0.01        0.15       -0.11      
+## 486  0.11  -0.01       -0.04       -0.09        0.02       -0.03      
+## 489 -0.01   0.02        0.01        0.00       -0.05        0.01      
+## 497  0.04   0.03        0.01       -0.01        0.13        0.19      
+## 500  0.04   0.03        0.01       -0.01        0.13        0.19      
+## 501 -0.05  -0.04       -0.01        0.01       -0.16       -0.24      
+## 503  0.04   0.03        0.01       -0.01        0.13        0.19      
+##     dfb.p(A,3)1 dfb.p(A,3)2 dfb.p(A,3)3 dffit   cov.r   cook.d hat    
+## 2   -0.06       -0.04        0.00       -0.19    0.93_*  0.00   0.01  
+## 9    0.12       -0.11       -0.11        0.29    0.94_*  0.01   0.02  
+## 52  -0.10       -0.12       -0.05        0.23    0.93_*  0.01   0.01  
+## 64  -0.09        0.11        0.08        0.36    0.94_*  0.01   0.02  
+## 65  -0.02       -0.02        0.00       -0.16    0.93_*  0.00   0.00  
+## 94  -0.06        0.11       -0.06       -0.28    0.94_*  0.01   0.01  
+## 149 -0.01        0.02       -0.02       -0.06    1.13_*  0.00   0.10_*
+## 151 -0.21       -0.18        0.01        0.35    0.85_*  0.01   0.01  
+## 152  0.06       -0.12        0.13        0.29    1.06_*  0.01   0.06_*
+## 153 -0.01        0.00        0.00        0.14    1.19_*  0.00   0.14_*
+## 156  0.13       -0.26        0.16       -0.34    1.12_*  0.01   0.11_*
+## 158  0.58       -1.28_*      1.09_*     -1.75_*  1.06_*  0.34   0.21_*
+## 159  0.06       -0.13        0.10        0.25    1.11_*  0.01   0.10_*
+## 163 -0.01        0.02       -0.01        0.05    1.06_*  0.00   0.04  
+## 185  0.13       -0.26        0.16       -0.34    1.12_*  0.01   0.11_*
+## 219  0.35        0.10       -0.15       -0.44_*  0.91_*  0.02   0.02  
+## 267  0.03        0.04        0.08       -0.23    0.93_*  0.01   0.01  
+## 270  0.01        0.00        0.00        0.35    1.18_*  0.01   0.15_*
+## 276  0.45        0.13       -0.20       -0.57_*  0.82_*  0.04   0.02  
+## 284 -0.14        0.26        0.02        0.45_*  0.89_*  0.02   0.02  
+## 285 -0.13        0.25        0.01        0.43_*  0.91_*  0.02   0.02  
+## 288 -0.13        0.25        0.01        0.43_*  0.91_*  0.02   0.02  
+## 307 -0.04        0.12       -0.12        0.20    1.17_*  0.00   0.13_*
+## 321  0.00        0.00        0.00       -0.01    1.14_*  0.00   0.11_*
+## 325  0.03       -0.08        0.10       -0.23    1.18_*  0.01   0.15_*
+## 332  0.08       -0.02        0.12       -0.85_*  1.36_*  0.08   0.28_*
+## 338 -0.01        0.00       -0.01       -0.43_*  1.17_*  0.02   0.15_*
+## 346 -0.04        0.12       -0.12        0.20    1.17_*  0.00   0.13_*
+## 406 -0.01        0.00       -0.03        0.17    1.05_*  0.00   0.04  
+## 486  0.03        0.07        0.13        0.23    0.93_*  0.01   0.01  
+## 489  0.00        0.00        0.01       -0.06    1.07_*  0.00   0.05_*
+## 497  0.01        0.00        0.00        0.35    1.18_*  0.01   0.15_*
+## 500  0.01        0.00        0.00        0.35    1.18_*  0.01   0.15_*
+## 501 -0.01        0.00       -0.01       -0.43_*  1.17_*  0.02   0.15_*
+## 503  0.01        0.00        0.00        0.35    1.18_*  0.01   0.15_*</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="anexos.html#cb15-1" aria-hidden="true"></a><span class="kw">summary</span>(im2)</span></code></pre></div>
+<pre><code>## Potentially influential observations of
+##   rlm(formula = Preco^0.2 ~ poly(Freq, 3) + poly(Nucleos, 2) +      poly(Ano, 3), data = dt, psi = MASS::psi.bisquare) :
+## 
+##     dfb.1_ dfb.p(F,3)1 dfb.p(F,3)2 dfb.p(F,3)3 dfb.p(N,2)1 dfb.p(N,2)2
+## 149  0.00   0.00       -0.01        0.01        0.00        0.00      
+## 152  0.06  -0.10        0.23       -0.15       -0.01        0.02      
+## 153  0.02  -0.01        0.07       -0.09       -0.01        0.01      
+## 156 -0.06  -0.08        0.18       -0.18        0.02       -0.02      
+## 158 -0.08  -0.13        0.33       -0.36        0.02       -0.01      
+## 159  0.04  -0.09        0.24       -0.16       -0.01        0.02      
+## 185 -0.06  -0.08        0.18       -0.18        0.02       -0.02      
+## 270  0.04   0.03        0.01       -0.01        0.13        0.19      
+## 307  0.02   0.01       -0.02        0.05       -0.01        0.01      
+## 321  0.00   0.00        0.01       -0.01        0.00        0.00      
+## 325 -0.03   0.01       -0.05        0.05        0.01        0.00      
+## 332 -0.07  -0.02       -0.33        0.49        0.10       -0.07      
+## 338 -0.05  -0.04       -0.01        0.01       -0.16       -0.23      
+## 346  0.02   0.01       -0.02        0.05       -0.01        0.01      
+## 489 -0.01   0.03        0.02       -0.01       -0.06        0.02      
+## 497  0.04   0.03        0.01       -0.01        0.13        0.19      
+## 500  0.04   0.03        0.01       -0.01        0.13        0.19      
+## 501 -0.05  -0.04       -0.01        0.01       -0.16       -0.23      
+## 503  0.04   0.03        0.01       -0.01        0.13        0.19      
+##     dfb.p(A,3)1 dfb.p(A,3)2 dfb.p(A,3)3 dffit   cov.r cook.d hat    
+## 149  0.00        0.01       -0.01       -0.01      NA    NA   0.12_*
+## 152  0.07       -0.15        0.15        0.32      NA    NA   0.06_*
+## 153 -0.01        0.00        0.00        0.15      NA    NA   0.15_*
+## 156  0.16       -0.32        0.21       -0.40      NA    NA   0.13_*
+## 158  0.27       -0.58        0.49       -0.75_*    NA    NA   0.05_*
+## 159  0.09       -0.18        0.14        0.32      NA    NA   0.10_*
+## 185  0.16       -0.32        0.21       -0.40      NA    NA   0.13_*
+## 270  0.01        0.00        0.00        0.35      NA    NA   0.15_*
+## 307 -0.04        0.13       -0.13        0.20      NA    NA   0.17_*
+## 321  0.00        0.00        0.00        0.02      NA    NA   0.12_*
+## 325  0.05       -0.11        0.13       -0.28      NA    NA   0.16_*
+## 332  0.08       -0.03        0.11       -0.82_*    NA    NA   0.25_*
+## 338 -0.01        0.00       -0.01       -0.42_*    NA    NA   0.14_*
+## 346 -0.04        0.13       -0.13        0.20      NA    NA   0.17_*
+## 489  0.00        0.00        0.01       -0.07      NA    NA   0.06_*
+## 497  0.01        0.00        0.00        0.35      NA    NA   0.15_*
+## 500  0.01        0.00        0.00        0.35      NA    NA   0.15_*
+## 501 -0.01        0.00       -0.01       -0.42_*    NA    NA   0.14_*
+## 503  0.01        0.00        0.00        0.35      NA    NA   0.15_*</code></pre>
+</div>
+<div id="seleção-de-modelos" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Seleção de modelos</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="anexos.html#cb17-1" aria-hidden="true"></a>m0 &lt;-<span class="st"> </span><span class="kw">lm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span>Freq <span class="op">+</span><span class="st"> </span>Nucleos <span class="op">+</span><span class="st"> </span>Ano, <span class="dt">data =</span> dt)</span>
+<span id="cb17-2"><a href="anexos.html#cb17-2" aria-hidden="true"></a>m1 &lt;-<span class="st"> </span><span class="kw">lm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(Freq, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Nucleos, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Ano, <span class="dv">2</span>), <span class="dt">data =</span> dt)</span>
+<span id="cb17-3"><a href="anexos.html#cb17-3" aria-hidden="true"></a>m2 &lt;-<span class="st"> </span><span class="kw">lm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(Freq, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Nucleos, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Ano, <span class="dv">3</span>), <span class="dt">data =</span> dt)</span>
+<span id="cb17-4"><a href="anexos.html#cb17-4" aria-hidden="true"></a>m3 &lt;-<span class="st"> </span><span class="kw">lm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(Freq, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Nucleos, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Ano, <span class="dv">3</span>), <span class="dt">data =</span> dt)</span>
+<span id="cb17-5"><a href="anexos.html#cb17-5" aria-hidden="true"></a>m4 &lt;-<span class="st"> </span><span class="kw">lm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(Freq, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Nucleos, <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Ano, <span class="dv">2</span>), <span class="dt">data =</span> dt)</span>
+<span id="cb17-6"><a href="anexos.html#cb17-6" aria-hidden="true"></a>m5 &lt;-<span class="st"> </span><span class="kw">lm</span>(Preco<span class="op">^</span><span class="fl">0.2</span> <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(Freq, <span class="dv">3</span>) <span class="op">+</span><span class="st"> </span><span class="kw">log</span>(Nucleos) <span class="op">+</span><span class="st"> </span><span class="kw">poly</span>(Ano, <span class="dv">3</span>), <span class="dt">data =</span> dt)</span>
+<span id="cb17-7"><a href="anexos.html#cb17-7" aria-hidden="true"></a></span>
+<span id="cb17-8"><a href="anexos.html#cb17-8" aria-hidden="true"></a>modl &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">m0 =</span> m0, <span class="dt">m2 =</span> m2, <span class="dt">m3 =</span> m3, <span class="dt">m4 =</span> m4, <span class="dt">m5 =</span> m5)</span>
+<span id="cb17-9"><a href="anexos.html#cb17-9" aria-hidden="true"></a>asbio<span class="op">::</span><span class="kw">lm.select</span>(modl)</span></code></pre></div>
+<pre><code>##                                                         Model         AIC
+## 1                            Preco^0.2 ~ Freq + Nucleos + Ano   58.963124
+## 2 Preco^0.2 ~ poly(Freq, 3) + poly(Nucleos, 2) + poly(Ano, 3) -152.409605
+## 3 Preco^0.2 ~ poly(Freq, 2) + poly(Nucleos, 2) + poly(Ano, 3) -143.497034
+## 4 Preco^0.2 ~ poly(Freq, 2) + poly(Nucleos, 2) + poly(Ano, 2)    6.914451
+## 5     Preco^0.2 ~ poly(Freq, 3) + log(Nucleos) + poly(Ano, 3)    9.424837
+##         AICc        BIC         Cp    PRESS
+## 1   59.08123   80.17424    6.00000 33.85989
+## 2 -151.97223 -109.98737 -162.46795 22.51970
+## 3 -143.13989 -105.31702 -157.35405 22.90219
+## 4    7.19960   40.85224  -42.46363 30.66416
+## 5    9.78198   47.60485  -40.01107 30.98014</code></pre>
+</div>
+<div id="intervalo-de-confiança-para-os-parâmetros" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Intervalo de confiança para os parâmetros</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="anexos.html#cb19-1" aria-hidden="true"></a><span class="kw">confint</span>(fit)</span></code></pre></div>
+<pre><code>##                        2.5 %     97.5 %
+## (Intercept)        4.1750555  4.2108322
+## poly(Freq, 3)1     8.1783715 10.0362985
+## poly(Freq, 3)2     0.1150404  1.1632064
+## poly(Freq, 3)3    -1.2827355 -0.3238632
+## poly(Nucleos, 2)1 10.8399391 12.0269515
+## poly(Nucleos, 2)2 -3.2304335 -1.9686814
+## poly(Ano, 3)1      2.9576532  4.4428560
+## poly(Ano, 3)2     -1.3264982 -0.3297843
+## poly(Ano, 3)3     -2.9588468 -2.0659883</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="anexos.html#cb21-1" aria-hidden="true"></a><span class="kw">confint.default</span>(<span class="dt">object =</span> fit2, <span class="dt">parm =</span> <span class="kw">names</span>(<span class="kw">coef</span>(fit2)))</span></code></pre></div>
+<pre><code>##                          2.5 %     97.5 %
+## (Intercept)        4.174172897  4.2101356
+## poly(Freq, 3)1     8.188739363 10.0563246
+## poly(Freq, 3)2     0.002955697  1.0565705
+## poly(Freq, 3)3    -1.333094060 -0.3692372
+## poly(Nucleos, 2)1 10.866668906 12.0598518
+## poly(Nucleos, 2)2 -3.291850005 -2.0235388
+## poly(Ano, 3)1      2.968596058  4.4615196
+## poly(Ano, 3)2     -1.290399071 -0.2885039
+## poly(Ano, 3)3     -3.087985687 -2.1904857</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="conclusão.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bibliografia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
