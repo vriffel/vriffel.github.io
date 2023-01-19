@@ -6,7 +6,17 @@
     <description>Recent content on Vinicius Ricardo Riffel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://vriffel.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vriffel.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Equações de Estimação Regularizadas</title>
+      <link>https://vriffel.github.io/blog/tcc/</link>
+      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://vriffel.github.io/blog/tcc/</guid>
+      <description>Esse foi meu TCC, feito sob orientação do professor Wagner Hugo Bonat. A íntegra dele pode ser acessada clicando aqui
+Os slides da apresentação do trabalho podem ser acessado aqui.</description>
+    </item>
+    
     <item>
       <title>Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park</title>
       <link>https://vriffel.github.io/blog/arima/</link>
