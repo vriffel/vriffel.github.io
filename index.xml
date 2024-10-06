@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vinicius Ricardo Riffel</title>
-    <link>https://vriffel.github.io/</link>
-    <description>Recent content on Vinicius Ricardo Riffel</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>My New Hugo Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://vriffel.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Equações de Estimação Regularizadas</title>
-      <link>https://vriffel.github.io/blog/tcc/</link>
-      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://vriffel.github.io/blog/tcc/</guid>
-      <description>Esse foi meu TCC, feito sob orientação do professor Wagner Hugo Bonat. A íntegra dele pode ser acessada clicando aqui
-Os slides da apresentação do trabalho podem ser acessado aqui.</description>
-    </item>
-    
-    <item>
-      <title>Modelo Auto-regressivo Integrado de Médias Móveis para a temperatura média anual nos anos de 1869-2019 do Central Park</title>
-      <link>https://vriffel.github.io/blog/arima/</link>
-      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://vriffel.github.io/blog/arima/</guid>
-      <description>Nas últimas décadas, a discussão sobre mudanças climáticas vem ganhando cada vez mais espaço. Nesse contexto, o entendimento de uma série histórica climática é de suma importância, a fim de prever tendências e mudanças nos valores de temperatura e precipitação, por exemplo. Afinal, a habilidade de antecipar como o clima irá mudar de um ano para o outro, possibilita melhor gerenciamento da agricultura, recursos hídricos e atividade pesqueira, além da possibilidade de contribuição relevante nos campos dos transportes, abastecimento, turismo e lazer.</description>
-    </item>
-    
-    <item>
-      <title>Modelo de regressão linear para precificação de processadores</title>
-      <link>https://vriffel.github.io/blog/reg/</link>
-      <pubDate>Sun, 28 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://vriffel.github.io/blog/reg/</guid>
-      <description>A compra de dispositivos tecnológicos é facilmente realizada através de sites de compra online. Antes o cliente estava acostumado a procurar soluções para sua vida tomando para si o que existia no mercado independente da adequação do produto ou serviço para seu propósito. Atualmente o mercado gamer é um dos mercados mais exigentes em termos de escolha de dispositivos tecnológicos de forma que atenda suas necessidades operacionais. Em 2018, somente esse mercado movimentou em média 1,5 bilhão de dólares no Brasil, sendo o Brasil o 13° maior mercado do mundo.</description>
-    </item>
-    
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
